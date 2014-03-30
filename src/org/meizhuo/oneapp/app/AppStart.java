@@ -1,22 +1,44 @@
 package org.meizhuo.oneapp.app;
 
+import org.meizhuo.oneapp.app.ui.BaseActivity;
+import org.meizhuo.oneapp.app.ui.Main;
+
+import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
+import android.os.Handler;
 
-public class AppStart extends Activity {
-
+public class AppStart extends BaseActivity {
+    private boolean isDestroy = false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_appstart);
+		setContentView(R.layout.acty_appstart);
+		new Handler().postDelayed(new Runnable() {
+
+			@Override
+			public void run() {
+				if (!isDestroy) {
+					startActivity(new Intent(getContext(), Main.class));
+					closeActivity();
+				}
+			}
+		}, 1000);
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		isDestroy = true;
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.app_start, menu);
-		return true;
+	protected void initData() {
+		
+	}
+
+	@Override
+	protected void initLayout() {
+		
 	}
 
 }
