@@ -20,7 +20,7 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 
 public class Main extends BaseActivity implements TabListener {
 	ActionBar mActionBar;
-	String[] title = { "Picture", "Article", "More" };
+	String[] title = { "图片", "文章", "更多" };
 	ViewPager viewpager;
 	List<Fragment> fragments = new ArrayList<Fragment>();
 
