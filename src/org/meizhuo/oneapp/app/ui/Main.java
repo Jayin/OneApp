@@ -41,6 +41,7 @@ public class Main extends BaseActivity implements TabListener {
 	protected void initLayout() {
 		mActionBar = getActionBar();
 		mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		mActionBar.setIcon(R.drawable.ic_icon);
 
 		viewpager = (ViewPager) _getView(R.id.viewpager);
 		fragments.add(new OnePicutreFragment());

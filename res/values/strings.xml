@@ -4,5 +4,6 @@
     <string name="app_name">OneApp</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="subtitle">One App is enough</string>
 
 </resources>
