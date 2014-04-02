@@ -14,13 +14,20 @@ import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
-@SuppressLint("SetJavaScriptEnabled")
+@SuppressLint({ "SetJavaScriptEnabled", "ValidFragment" })
 public class OneArticleFragment extends Fragment implements OnRefreshListener {
-
+	
 	WebView webview;
 	String url = "http://etips.u.qiniudn.com/static/onearticle.html";
 	SwipeRefreshLayout swipeLayout;
-    String contentBody;
+    String contentBody = "";
+    public OneArticleFragment(){
+    	
+    }
+    
+    public OneArticleFragment(String url){
+    	this.url = url;
+    }
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,10 +47,6 @@ public class OneArticleFragment extends Fragment implements OnRefreshListener {
 		if (!swipeLayout.isRefreshing())
 			swipeLayout.setRefreshing(true);
 		webview.setWebChromeClient(new MyWebChromeClient());
-
-		
-		contentBody = "LOL!";
-		// webview.loadUrl(url);
 		webview.addJavascriptInterface(new WebAppInterface(getActivity()), "fromAndroid");
 		webview.loadUrl("file:///android_asset/preview.html");
 		return v;
