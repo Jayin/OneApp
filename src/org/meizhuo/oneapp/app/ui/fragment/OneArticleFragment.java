@@ -18,7 +18,8 @@ import android.webkit.WebView;
 public class OneArticleFragment extends Fragment implements OnRefreshListener {
 	
 	WebView webview;
-	String url = "http://etips.u.qiniudn.com/static/onearticle.html";
+//	String url = "http://etips.u.qiniudn.com/static/onearticle.html";
+	String url = "http://daily.zhihu.com/story/3754120";
 	SwipeRefreshLayout swipeLayout;
     String contentBody = "";
     public OneArticleFragment(){

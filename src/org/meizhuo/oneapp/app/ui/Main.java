@@ -59,9 +59,12 @@ public class Main extends BaseActivity implements TabListener {
 				});
 
 		mActionBar.removeAllTabs();
+	   
 		for (int i = 0; i < title.length; i++) {
 			mActionBar.addTab(mActionBar.newTab().setText(title[i])
 					.setTabListener(this));
+//			mActionBar.addTab(mActionBar.newTab().setCustomView(R.layout.tab_main)
+//					.setTabListener(this));
 		}
 	}
 
